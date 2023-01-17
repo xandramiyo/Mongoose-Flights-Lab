@@ -16,7 +16,7 @@
 <br><br><h2>Destinations</h2>
 
 <form id="add-destination-form" method="POST"
-  action="/flights/<%= flight._id %>/desinations">
+  action="/flights/<%= flight._id %>/destinations">
   <label>Airport:</label>
   <select name="airport">
     <option value="LAX">LAX</option>
@@ -39,7 +39,7 @@
       </tr>
     </thead>
     <tbody>
-      <% flights.destinations.forEach(function(d) { %>
+      <% flight.destinations.forEach(function(d) { %>
         <tr>
           <td><%= d.airport %></td>
           <td><%= d.arrival %></td>

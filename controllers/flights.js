@@ -20,7 +20,7 @@ function show(req, res) {
   }
 
 function newFlight(req, res) {
-    res.render('flights/new')
+    res.render('flights/new', { title: 'Add New Flight' })
 }
 
 function create(req, res) {
