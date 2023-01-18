@@ -3,14 +3,14 @@
 <h2>Details</h2>
 
 <section id="show-page">
-    <div>Airline </div>
+    <div>Airline: </div>
     <div><%= flight.airline %></div>
     <div>Airport: </div>
     <div><%= flight.airport %></div>
-    <div>Flight Number </div>
+    <div>Flight Number: </div>
     <div><%= flight.flightNo %></div>
-    <div>Depart Date </div>
-    <div><%= flight.departs %></div>
+    <div>Depart Date: </div>
+    <div><%= flight.departs.toLocaleString() %></div>
   </section>
 
 <br><br><h2>Destinations</h2>
@@ -30,23 +30,26 @@
   <input type="submit" value="Add Destination">
 </form>
 
+
 <% if(flight.destinations.length) { %>
-  <table>
-    <thead>
-      <tr>
-        <th>Airport</th>
-        <th>Arrival</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% flight.destinations.forEach(function(d) { %>
+  <div class="destination-table">
+    <table>
+      <thead>
         <tr>
-          <td><%= d.airport %></td>
-          <td><%= d.arrival %></td>
+          <th>Airport</th>
+          <th>Arrival</th>
         </tr>
-      <% }); %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% flight.destinations.forEach(function(d) { %>
+          <tr>
+            <td><%= d.airport %></td>
+            <td><%= d.arrival.toLocaleString() %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>  
 <% } else { %>
     <h5>Please Add Destination</h5>
 <% } %>
