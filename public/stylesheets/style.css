@@ -3,16 +3,31 @@
 }
 
 body {
-  height: 100vh;
-  width: 100vw;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  margin-top: 10vmin;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: 
+    "nav"
+    "main"
 }
 
-nav {
-  text-align: center;
-  width: 40vw;
-  margin: auto;
+body > nav {
+  grid-area: nav;
+  background-color: #a3d6e2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px 0 30px;
+}
+
+body > main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 20px;
+  overflow-y: scroll;
 }
 
 h2 {
@@ -21,7 +36,14 @@ text-align: center;
 }
 
 a {
-  color: #00B7FF;
+  color: #5b8fba;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+}
+
+nav > a {
+  color: rgb(3, 109, 230);
 }
 
 table {
@@ -76,5 +98,41 @@ td {
 }
 
 .destination-table {
-  margin-top: 10vmin;
+  margin-top: 5vmin;
+}
+
+.ticket-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-ticket-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.new-ticket {
+  text-align: center;
+  text-decoration: underline;
+  margin: 3vmin auto;
+}
+
+#add-ticket-form {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 2vmin auto;
+}
+
+.ticket-container {
+  display: flex;
+  margin: 0px;
+  justify-content: center;
+}
+
+.ticket-list {
+ list-style: none; 
+ margin: 0px;
 }

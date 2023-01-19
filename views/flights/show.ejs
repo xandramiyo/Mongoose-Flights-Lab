@@ -54,4 +54,25 @@
     <h5>Please Add Destination</h5>
 <% } %>
 
+<div class="new-ticket-btn">
+<a class="new-ticket" href='/flights/<%= flight._id %>/tickets/new'>Add Ticket</a>
+</div>
+
+<div class="ticket-container">
+  <table class="seat-list">
+    <thead>
+      <tr>
+        <th>Unavailable Seats</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% tickets.forEach(function(t) { %>
+        <tr>
+          <td><%= t.seat %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+
 <%- include('../partials/footer') %>
